@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#ping 5 times the first argument of the script
+
+arg_val=$1;
+i=0;
+
+for counter in "$@"; do
+    i=$((i+1));
+done
+
+
+if [ $i -ne 1 ]; then
+    echo "Usage: $0 {IP_ADDRESS}"
+else
+    ping -c 5 arg_val
+fi
